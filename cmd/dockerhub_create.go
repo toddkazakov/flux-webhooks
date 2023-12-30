@@ -26,10 +26,9 @@ type DockerHubConfig struct {
 var hubConfig = &DockerHubConfig{}
 
 var dockerhubCreateCmd = &cobra.Command{
-	Use:     "create",
-	Short:   "Create Docker Hub Webhooks",
-	Long:    "The create command is used to create dockerhub webhooks from flux receivers pointing to dockerhub repositories",
-	PreRunE: initLogger,
+	Use:   "create",
+	Short: "Create Docker Hub Webhooks",
+	Long:  "The create command is used to create dockerhub webhooks from flux receivers pointing to dockerhub repositories",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx, cancel := context.WithTimeout(context.Background(), 360*time.Second)
 		defer cancel()

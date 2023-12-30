@@ -13,10 +13,9 @@ import (
 )
 
 var dockerhubListCmd = &cobra.Command{
-	Use:     "list",
-	Short:   "List Docker Hub Webhooks",
-	Long:    "The list command is used to retrieve a list of all webhooks which will be created",
-	PreRunE: initLogger,
+	Use:   "list",
+	Short: "List Docker Hub Webhooks",
+	Long:  "The list command is used to retrieve a list of all webhooks which will be created",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx, cancel := context.WithTimeout(context.Background(), 360*time.Second)
 		defer cancel()

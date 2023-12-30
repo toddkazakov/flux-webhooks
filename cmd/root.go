@@ -12,8 +12,9 @@ var kubeconfigArgs = genericclioptions.NewConfigFlags(false)
 var logLevel string
 
 var rootCmd = &cobra.Command{
-	Use:   "fluxwh",
-	Short: "Helper tool to automate the creation of flux webhooks",
+	Use:               "fluxwh",
+	Short:             "Helper tool to automate the creation of flux webhooks",
+	PersistentPreRunE: initLogger,
 }
 
 func init() {
